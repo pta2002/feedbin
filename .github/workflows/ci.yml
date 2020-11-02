@@ -32,6 +32,8 @@ jobs:
         run: echo ${{ steps.buildx.outputs.name }}
       -
         name: Build docker
+        env:
+          DOCKER_USERNAME: ${{ secrets.DOCKER_HUB_USERNAME }}
         run: |
           docker buildx build \
           --platform=linux/amd64,linux/arm64 \
