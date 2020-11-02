@@ -2,16 +2,16 @@ development:
   adapter: postgresql
   encoding: unicode
   database: feedbin_development
-  pool: <%= ENV['DB_POOL'] || 5 %>
+  pool: <%= ENV['DB_POOL'] || 19 %>
   username: <%= ENV['POSTGRES_USERNAME'] %>
-  password:
-  host: localhost
+  password: <%= ENV['POSTGRES_PASSWORD'] %>
+  host: <%= ENV['POSTGRES'] %>
 
 test:
   adapter: postgresql
   encoding: unicode
   database: feedbin_test
-  pool: <%= ENV['DB_POOL'] || 5 %>
+  pool: <%= ENV['DB_POOL'] || 19 %>
   username: <%= ENV['POSTGRES_USERNAME'] %>
   password: <%= ENV['POSTGRES_PASSWORD'] %>
-  host: localhost
+  host: <%= ENV['POSTGRES'] %>
